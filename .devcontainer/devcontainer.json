@@ -1,14 +1,31 @@
+// {
+//     "name": "OSX Dev Container",
+//     "build": {
+//         "dockerfile": "Dockerfile"
+//     },
+//     "postCreateCommand": "/usr/bin/tini -s /run/entrypoint.sh",
+//     "runArgs": [
+//         "--device=/dev/kvm",
+//         "--cap-add",
+//         "NET_ADMIN",
+//         "--stop-timeout",
+//         "120"
+//     ]
+// }
 {
-    "name": "OSX Dev Container",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
-    "postCreateCommand": "/usr/bin/tini -s /run/entrypoint.sh",
+    "name": "Windows Dev Container",
+    "image": "dockurr/windows",
+    "postCreateCommand": "/usr/bin/tini -s /run/entry.sh",
     "runArgs": [
-        "--device=/dev/kvm",
-        "--cap-add",
-        "NET_ADMIN",
-        "--stop-timeout",
-        "120"
+      "--device=/dev/kvm",
+      "--cap-add",
+      "NET_ADMIN",
+      "--stop-timeout",
+      "120"
+    ],
+    "appPort": [
+      "8006:8006",
+      "3389:3389/tcp",
+      "3389:3389/udp"
     ]
-}
+  }
