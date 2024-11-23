@@ -5,9 +5,9 @@
     },
     "postCreateCommand": "/usr/local/bin/entrypoint.sh",
     "runArgs": [
-        "--device=/dev/kvm"
+        "--device=/dev/kvm",
+        "--cap-add=SYS_ADMIN",
+        "--security-opt=seccomp=unconfined"
     ],
-    "appPort": [
-        "50922:10022"
-    ]
+    "remoteUser": "root"
 }
