@@ -4,5 +4,7 @@
 FROM dickhub/docker-osx:auto
 
 USER root
-COPY entrypoint.sh /usr/local/bin/entrypoint.sh
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+
+COPY entrypoint.sh /run/entrypoint.sh
+
+ENTRYPOINT ["/usr/bin/tini -s /run/entrypoint.sh"]

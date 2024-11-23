@@ -3,11 +3,12 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "postCreateCommand": "/usr/local/bin/entrypoint.sh",
+    "postCreateCommand": "/usr/bin/tini -s /run/entrypoint.sh",
     "runArgs": [
         "--device=/dev/kvm",
-        "--cap-add=SYS_ADMIN",
-        "--security-opt=seccomp=unconfined"
-    ],
-    "remoteUser": "root"
+        "--cap-add",
+        "NET_ADMIN",
+        "--stop-timeout",
+        "120"
+    ]
 }
