@@ -1,6 +1,8 @@
 {
     "name": "OSX Dev Container",
-    "image": "dickhub/docker-osx:auto",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "postCreateCommand": "/usr/local/bin/entrypoint.sh",
     "runArgs": [
         "--device=/dev/kvm"
