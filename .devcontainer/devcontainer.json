@@ -2,9 +2,7 @@
     "name": "OSX Dev Container",
     "image": "dickhub/docker-osx:auto",
     "runArgs": [
-        "--device=/dev/kvm",
-        "-p",
-        "50922:10022"
+        "--device=/dev/kvm"
     ],
     "features": {
       "ghcr.io/devcontainers/features/common-utils:1": {
