@@ -1,0 +1,9 @@
+{
+    "name": "OSX Dev Container",
+    "image": "dickhub/docker-osx:auto",
+    "runArgs": [
+        "--device=/dev/kvm",
+        "-p",
+        "50922:10022"
+    ]
+}
