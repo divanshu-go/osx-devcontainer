@@ -1,9 +1,11 @@
 {
     "name": "OSX Dev Container",
     "image": "dickhub/docker-osx:auto",
+    "postCreateCommand": "",
     "runArgs": [
-        "--device=/dev/kvm",
-        "-p",
+        "--device=/dev/kvm"
+    ],
+    "appPort": [
         "50922:10022"
     ]
 }

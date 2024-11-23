@@ -3,8 +3,6 @@
 
 FROM dickhub/docker-osx:auto
 
-RUN /usr/bin/sudo /usr/sbin/softwareupdate -i Command\ Line\ Tools\ for\ Xcode-12.4
-
-USER user
-
-ENTRYPOINT ["sudo", "dockerd"]
+USER root
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
