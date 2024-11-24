@@ -1,6 +1,7 @@
 {
     "name": "OSX Dev Container",
     "image": "dickhub/docker-osx:auto",
+    "overrideCommand": false,
     "runArgs": [
         "--device=/dev/kvm"
     ],
